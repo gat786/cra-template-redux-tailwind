@@ -11,7 +11,7 @@
     "template",
     "template.json"
   ],
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
@@ -25,6 +25,15 @@
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gat786/cra-template-redux-tailwind"
+  },
+  "author": {
+    "name": "Ganesh Tiwari",
+    "url": "https://github.com/gat786"
+  },
+  "license": "MIT License",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
