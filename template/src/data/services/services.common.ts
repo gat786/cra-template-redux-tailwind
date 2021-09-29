@@ -42,7 +42,7 @@ export const get = async (
   try {
     const stringParams = stringifyParams(requestDetails.params);
     const response = await axios.get(`${requestDetails.url}?${stringParams}`, {
-      ...requestDetails.headers,
+      headers: requestDetails.headers,
     });
     return success(response.data);
   } catch (e) {
@@ -72,7 +72,7 @@ export const post = async (
       `${requestDetails.url}?${stringParams}`,
       requestDetails.data,
       {
-        ...requestDetails.headers,
+        headers: requestDetails.headers,
       }
     );
     return success(response.data);
@@ -103,7 +103,7 @@ export const download = async (
       `${requestDetails.url}?${stringParams}`,
       requestDetails.data,
       {
-        ...requestDetails.headers,
+        headers: requestDetails.headers,
         responseType: "blob",
       }
     );
@@ -134,7 +134,7 @@ export const update = async (
     const response = await axios.put(
       requestDetails.url + `?${stringParams}`,
       requestDetails.data,
-      { ...requestDetails.headers }
+      { headers: requestDetails.headers }
     );
     return success(response.data);
   } catch (e) {
@@ -160,7 +160,7 @@ export const del = async (
     const stringParams = stringifyParams(requestDetails.params);
     const response = await axios.delete(
       requestDetails.url + `?${stringParams}`,
-      { ...requestDetails.headers }
+      { headers: requestDetails.headers }
     );
     return success(response.data);
   } catch (e) {
