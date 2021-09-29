@@ -159,7 +159,7 @@ export const del = async (
     const stringParams = stringifyParams(requestDetails.params);
     const response = await axios.delete(
       requestDetails.url + `?${stringParams}`,
-      { ...requestDetails.headers }
+      { headers: requestDetails.headers }
     );
     return success(response.data);
   } catch (e) {
